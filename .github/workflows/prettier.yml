@@ -27,6 +27,8 @@ jobs:
       run: |
         git config --global user.name 'Haroenbot'
         git config --global user.email 'spam@haroen.me'
+        # TODO: find this info from env?
+        git remote add origin https://github.com/haroenv/ci-prettier-test.git
         git add -A && git commit -m 'chore(prettier): format code' --allow-empty
         git push -u origin HEAD
       env:
