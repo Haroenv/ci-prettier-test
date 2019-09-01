@@ -29,7 +29,7 @@ jobs:
         CI: true
     - name: commit changes
       run: |
-        git config --global user.name 'Prettier'
-        git config --global user.email 'robot@example.com'
+        git config --global user.name 'Haroenbot'
+        git config --global user.email 'spam@haroen.me'
         git add -A && git commit -m 'chore(prettier): format code' --allow-empty
         git push -u origin HEAD
