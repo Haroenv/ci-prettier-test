@@ -27,7 +27,7 @@ jobs:
       run: |
         git config --global user.name 'Haroenv'
         git config --global user.email 'hello@haroen.me'
-        git add -A && git commit -m 'chore(prettier): format code' --allow-empty
-        # git push -u origin HEAD
+        git add -A && git commit -m 'chore(prettier): format code [CI SKIP]' --allow-empty
+        git push -u origin HEAD
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
