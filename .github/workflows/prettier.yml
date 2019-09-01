@@ -25,9 +25,9 @@ jobs:
         CI: true
     - name: commit changes
       run: |
-        git config --global user.name 'Haroenv'
-        git config --global user.email 'hello@haroen.me'
+        git config --global user.name 'Haroenbot'
+        git config --global user.email 'spam@haroen.me'
         git add -A && git commit -m 'chore(prettier): format code [CI SKIP]' --allow-empty
         git push -u origin HEAD
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_PUSH_TOKEN }}
