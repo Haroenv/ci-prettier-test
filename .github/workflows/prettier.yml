@@ -27,6 +27,7 @@ jobs:
       run: |
         git config --global user.name 'Haroenbot'
         git config --global user.email 'spam@haroen.me'
+        git checkout ${GITHUB_REF}
         git add -A && git commit -m 'chore(prettier): format code [ci skip]' --allow-empty
         git push https://${GITHUB_PUSH_TOKEN}:x-oauth-basic@github.com/${GITHUB_REPOSITORY} ${GITHUB_REF}
       env:
