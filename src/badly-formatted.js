@@ -1,1 +1,1 @@
-console.log('"bad spaces & quotes!"');
+console.log(     "\"bad spaces & quotes!\"");
