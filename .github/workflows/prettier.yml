@@ -27,11 +27,7 @@ jobs:
       run: |
         git config --global user.name 'Haroenbot'
         git config --global user.email 'spam@haroen.me'
-        # git config --global user.password $GITHUB_PUSH_TOKEN
-        # git remote set-url origin https://haroenbot:$GITHUB_PUSH_TOKEN@github.com/haroenv/ci-prettier-test
-        git checkout failing
-        echo $GITHUB_REF
         git add -A && git commit -m 'chore(prettier): format code [ci skip]' --allow-empty
-        echo "git push https://${GITHUB_PUSH_TOKEN}:x-oauth-basic@github.com/${GITHUB_REPOSITORY} HEAD"
+        git push https://${GITHUB_PUSH_TOKEN}:x-oauth-basic@github.com/${GITHUB_REPOSITORY} ${GITHUB_REF}
       env:
         GITHUB_PUSH_TOKEN: ${{ secrets.GITHUB_PUSH_TOKEN }}
