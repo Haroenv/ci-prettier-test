@@ -30,7 +30,8 @@ jobs:
         # git config --global user.password $GITHUB_PUSH_TOKEN
         # git remote set-url origin https://haroenbot:$GITHUB_PUSH_TOKEN@github.com/haroenv/ci-prettier-test
         git checkout failing
+        echo $GITHUB_REF
         git add -A && git commit -m 'chore(prettier): format code [CI SKIP]' --allow-empty
-        git push https://${GITHUB_PUSH_TOKEN}:x-oauth-basic@github.com/haroenv/ci-prettier-test HEAD
+        echo "git push https://${GITHUB_PUSH_TOKEN}:x-oauth-basic@github.com/${GITHUB_REPOSITORY} HEAD"
       env:
         GITHUB_PUSH_TOKEN: ${{ secrets.GITHUB_PUSH_TOKEN }}
