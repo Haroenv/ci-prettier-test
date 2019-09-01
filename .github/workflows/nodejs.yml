@@ -1,9 +1,9 @@
-name: Node CI
+name: Prettier
 
 on: [push]
 
 jobs:
-  build:
+  format:
 
     runs-on: ubuntu-latest
 
@@ -27,3 +27,9 @@ jobs:
         yarn format
       env:
         CI: true
+    - name: commit changes
+      run: |
+        git config --global user.name 'Prettier'
+        git config --global user.email 'robot@example.com'
+        git add -A && git commit -m 'chore(prettier): format code' --allow-empty
+        git push -u origin HEAD
