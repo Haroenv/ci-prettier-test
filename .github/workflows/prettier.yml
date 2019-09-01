@@ -28,6 +28,6 @@ jobs:
         git config --global user.name 'Haroenbot'
         git config --global user.email 'spam@haroen.me'
         git add -A && git commit -m 'chore(prettier): format code' --allow-empty
-        git push -u origin HEAD
+        # git push -u origin HEAD
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
