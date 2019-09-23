@@ -29,6 +29,9 @@ jobs:
     - name: commit changes
       run: |
         echo ${GITHUB_REF}
+        echo ${{ github.sha }}
+        echo ${{ github.ref }}
+        echo ${{ github.head_ref }}
         git config --global user.name 'Haroenbot'
         git config --global user.email 'spam@haroen.me'
         git checkout ${GITHUB_REF}
