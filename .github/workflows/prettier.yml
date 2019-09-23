@@ -34,8 +34,8 @@ jobs:
         echo ${{ github.head_ref }}
         git config --global user.name 'Haroenbot'
         git config --global user.email 'spam@haroen.me'
-        git checkout ${GITHUB_REF}
+        git checkout ${{ github.head_ref }}
         git add -A && git commit -m 'chore(prettier): format code [ci skip]' --allow-empty
-        git push https://${GITHUB_PUSH_TOKEN}:x-oauth-basic@github.com/${GITHUB_REPOSITORY} ${GITHUB_REF}
+        git push https://${GITHUB_PUSH_TOKEN}:x-oauth-basic@github.com/${GITHUB_REPOSITORY} ${{ github.head_ref }}
       env:
         GITHUB_PUSH_TOKEN: ${{ secrets.GITHUB_PUSH_TOKEN }}
