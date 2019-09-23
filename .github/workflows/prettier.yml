@@ -26,21 +26,16 @@ jobs:
       env:
         CI: true
 
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
+    - name: run if git status is different
+      if: git diff-files --quiet
+      run: echo lol this runs
 
     # - name: commit changes
     #   run: |
-    #     echo ${GITHUB_REF}
-    #     echo ${{ github.sha }}
-    #     echo ${{ github.ref }}
-    #     echo ${{ github.head_ref }}
     #     git config --global user.name 'Haroenbot'
     #     git config --global user.email 'spam@haroen.me'
     #     git checkout ${{ github.head_ref }}
-    #     git add -A && git commit -m 'chore(prettier): format code [ci skip]' --allow-empty
+    #     git add -A && git commit -m 'chore(prettier): format code' --allow-empty
     #     git push https://${GITHUB_PUSH_TOKEN}:x-oauth-basic@github.com/${GITHUB_REPOSITORY} ${{ github.head_ref }}
     #   env:
     #     GITHUB_PUSH_TOKEN: ${{ secrets.GITHUB_PUSH_TOKEN }}
